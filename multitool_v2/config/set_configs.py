@@ -4,7 +4,8 @@ from subprocess import Popen
 from os import path
 class Config:
     config_class = ConfigParser()
-    FILE_CONFIG = "D:\\proyectos\\multitool\\multitool_V2\\config_opened\\config_opened.ini"
+    carpeta=path.dirname(__file__)
+    FILE_CONFIG=path.join(carpeta,"\\config.ini")
     if path.exists(FILE_CONFIG):
         config_class.read(filenames=FILE_CONFIG, encoding="UTF-8")
     else:
@@ -66,7 +67,7 @@ class Config:
                         "Version":macos_version
                     }
             cls.save_change_config()
-        match config_opened.get(section="OS",option="Version"):
+        match config_opened.get(section="OS",option="Name"):
             case "Windows":
                 import ctypes
                 FONT_PRIVATE = 0x10  # * indica que la font se cargue para el proceso actual

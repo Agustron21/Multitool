@@ -1,5 +1,4 @@
 from PIL import Image,ImageColor
-
 #* debo hacer que devuelva las imagenes ya procesadas 
 class FactImgNotify():
     PATH_PIC=["D:\\proyectos\\proyectX\\multitool_v2\\ui\\assets\\image\\advertencia.png",
@@ -17,4 +16,4 @@ class FactImgNotify():
         for clave in imagenes_enpaquetadas.keys():
             imagenes_enpaquetadas[clave]=next(item)
         return imagenes_enpaquetadas
-print(FactImgNotify.create_imgs())
+    

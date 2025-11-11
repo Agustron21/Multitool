@@ -76,8 +76,14 @@
 # label.config()
 # ventana_principal.mainloop()
 
-from subprocess import Popen,PIPE
+# from subprocess import Popen,PIPE
 
-a=Popen(["Powershell.exe","Get-ChildItem","-Path","D:\\proyectos\\proyectX\\multitool_v2\\ui\\assets\\image"],stdout=PIPE)
-for i in a.stdout:
-    print(i)
+# a=Popen(["Powershell.exe","Get-ChildItem","-Path","D:\\proyectos\\proyectX\\multitool_v2\\ui\\assets\\image"],stdout=PIPE)
+# for i in a.stdout:
+#     print(i)
+
+from configparser import ConfigParser
+a=ConfigParser()
+a.read("D:\\proyectos\\proyectX\\multitool_v2\\config\\config.ini",encoding="utf-8")
+b=a.get(section="Screen",option="resolution")
+#* colocar en el config el min height 
